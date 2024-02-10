@@ -1,0 +1,128 @@
+@import url(./reset.scss);
+body {
+    height: 100vh;
+    background-color: #000;
+    margin: 0;
+    color: white;
+    font-family: TwitterChirp, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+$borderColor:#2f3336;
+$colorGray: #71767b;
+$colorDarkGray: #a2a2a2;
+$colorInfo: #1d9bf0;
+.container {
+    display: flex;
+    justify-content: space-between;
+    .tweet {
+        background-color: #000;
+        margin: auto;
+        height: max-content;
+        font-size: 15px;
+        width: 600px;
+        max-width: 100%;
+        padding: clamp(10px, 1vw, 15px);
+        padding-bottom: 0 !important;
+        border: 1px solid $borderColor;
+        &-profile {
+            display: flex;
+            align-items: center;
+            picture {
+                margin-right: 12px;
+                width: 40px;
+                height: 40px;
+                border-radius: 100%;
+                overflow: hidden;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            &-names {
+                &-name {
+                    display: flex;
+                    align-items: center;
+                    height: 18px;
+                    font-weight: 700;
+                    max-width: 100%;
+                    svg {
+                        margin-left: 3px;
+                    }
+                }
+                &-username {
+                    color: $colorGray;
+                }
+            }
+        }
+        &-content {
+            font-size: 17px;
+            padding: 12px 0;
+            border-bottom: 1px solid $borderColor;
+            span {
+                color: $colorInfo
+            }
+        }
+        &-status {
+            height: 46px;
+            color: $colorDarkGray;
+            font-size: 13px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            svg {
+                margin-right: 3px;
+            }
+            &-item {
+                display: flex;
+                align-items: center;
+                cursor: pointer;
+            }
+        }
+    }
+    .tweet-update {
+        padding: 10px;
+        border-right: 1px solid $borderColor;
+        height: 100vh;
+        min-width: 400px;
+        margin-right: 10px;
+        ul {
+            li {
+                margin-bottom: 20px;
+                label {
+                    color: $colorDarkGray;
+                    display: block;
+                    margin-bottom: 5px;
+                }
+                input,
+                textarea {
+                    background-color: transparent;
+                    border: 0;
+                    border-bottom: 1px solid #fff;
+                    color: #fff;
+                    min-height: 40px;
+                    width: 100%;
+                    &::placeholder {
+                        color: #fff;
+                        opacity: .2;
+                    }
+                }
+                button {
+                    border: 0;
+                    padding: 7px 12px;
+                    background-color: $colorInfo;
+                    color: #fff;
+                    font-weight: 600;
+                    font-size: 16px;
+                    border-radius: 5px;
+                    margin-bottom: 20px;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
